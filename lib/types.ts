@@ -1,5 +1,5 @@
 export type ProjectType = {
-    id: number,
+    projectId: number,
     title: string,
     detail: string,
     nameProjectOwner: string,
@@ -7,7 +7,7 @@ export type ProjectType = {
 }
 
 export type TechnologyType = {
-    id: number,
+    techId: number,
     title: string,
     version: string
 }

@@ -14,7 +14,7 @@ import { Separator } from "./separator"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import Image from "next/image"
-import { ProjectType } from "@/data"
+import { ProjectType } from "@/lib/types"
 
 type CardProps = React.ComponentProps<typeof Card> & ProjectType
 
@@ -41,11 +41,11 @@ export function ProjectCard({ className, ...props }: CardProps) {
         <div className="flex flex-row gap-2">{props.technology.map((item => <span className="px-4 py-2 bg-gray-200 hover:bg-gray-300 hover:text-white text-gray-800 text-sm font-medium rounded-full">{item.title}</span>))}</div>
         <Separator/>
         <span className="font-semibold">Project Owner</span>
-        <span><Avatar>
+        <div className="flex items-center gap-2"><Avatar>
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        {props.nameProjectOwner}</span>
+        <span>{props.nameProjectOwner}</span></div>
       </CardContent>
       <CardFooter>
         <Button className="w-full">
