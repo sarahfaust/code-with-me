@@ -1,4 +1,4 @@
-import { BellRing, Check } from "lucide-react"
+import { BellRing, Bold, Check } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -10,33 +10,46 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Separator } from "./separator"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+import Image from "next/image"
+import { ProjectType } from "@/lib/types"
 
-type CardProps = React.ComponentProps<typeof Card>
+type CardProps = React.ComponentProps<typeof Card> & ProjectType
 
 export function ProjectCard({ className, ...props }: CardProps) {
   return (
     <Card className={cn("w-[380px]", className)} {...props}>
+       <AspectRatio ratio={16 / 7} className="bg-muted">
+      <Image
+        src="/aaa.jpg"
+        alt="Photo by Drew Beamer"
+        fill
+        className="rounded-md object-cover"
+      />
+    </AspectRatio>
       <CardHeader>
-        <CardTitle>Notifications</CardTitle>
-        <CardDescription>You have 3 unread messages.</CardDescription>
+        <CardTitle>{props.title}</CardTitle>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-md border p-4">
-          <BellRing />
-          <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Push Notifications
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Send notifications to device.
-            </p>
-          </div>
-        </div>
-        <div>Card Test</div>
+        <Separator/>
+        <div className="font-semibold">Description</div>
+        <div>{props.detail}</div>
+        <Separator/>
+        <div className="font-semibold">Technology</div>
+        <div className="flex flex-row gap-2">{props.technology.map((item => <span className="px-4 py-2 bg-gray-200 hover:bg-gray-300 hover:text-white text-gray-800 text-sm font-medium rounded-full">{item.title}</span>))}</div>
+        <Separator/>
+        <span className="font-semibold">Project Owner</span>
+        <div className="flex items-center gap-2"><Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <span>{props.nameProjectOwner}</span></div>
       </CardContent>
       <CardFooter>
         <Button className="w-full">
-          <Check className="mr-2 h-4 w-4" /> Mark all as read
+          Mehr Infos zu dem Projekt
         </Button>
       </CardFooter>
     </Card>
