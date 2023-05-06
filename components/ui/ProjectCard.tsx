@@ -17,26 +17,15 @@ export function ProjectCard({ className, ...props }: CardProps) {
   return (
     <Card className={cn("w-[380px]", className)} {...props}>
       <CardHeader>
-        <CardTitle>Notifications</CardTitle>
-        <CardDescription>You have 3 unread messages.</CardDescription>
+        <CardTitle>Project</CardTitle>
+        <CardDescription>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-md border p-4">
-          <BellRing />
-          <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Push Notifications
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Send notifications to device.
-            </p>
-          </div>
-        </div>
         <div>Card Test</div>
       </CardContent>
       <CardFooter>
         <Button className="w-full">
-          <Check className="mr-2 h-4 w-4" /> Mark all as read
+          Mehr Infos zum Projekt
         </Button>
       </CardFooter>
     </Card>
