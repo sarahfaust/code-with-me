@@ -30,3 +30,9 @@ export const projectList: ProjectType[] = [
         technology: [ {techId: 4, title: 'Tech 4', version: "4" }]
     },
 ]
+
+export const techList: TechnologyType[] = [
+    {techId: 1, title: 'Tech 1', version: "1" }, 
+    {techId: 2, title: 'Tech 2', version: "2" },
+    {techId: 3, title: 'Tech 3', version: "3" },
+    {techId: 4, title: 'Tech 4', version: "4" }]
