@@ -1,4 +1,4 @@
-import { ProjectType } from "./lib/types";
+import { ProjectType, TechnologyType } from "./lib/types";
 
 export const projectList: ProjectType[] = [
     {
@@ -32,7 +32,7 @@ export const projectList: ProjectType[] = [
 ]
 
 export const techList: TechnologyType[] = [
-    {id: 1, title: 'Tech 1', version: "1" }, 
-    {id: 2, title: 'Tech 2', version: "2" },
-    {id: 3, title: 'Tech 3', version: "3" },
-    {id: 4, title: 'Tech 4', version: "4" }]
+    {techId: 1, title: 'Tech 1', version: "1" }, 
+    {techId: 2, title: 'Tech 2', version: "2" },
+    {techId: 3, title: 'Tech 3', version: "3" },
+    {techId: 4, title: 'Tech 4', version: "4" }]
